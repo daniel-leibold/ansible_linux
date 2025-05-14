@@ -1,6 +1,8 @@
+---
 - name: My first play
-  hosts: desktop
+  hosts: localhost
   connection: local
+  become: true
   tasks:
    - name: Ping my hosts
      ansible.builtin.ping:
