@@ -1,7 +1,7 @@
 ---
 - name: My first play
-  hosts: localhost
-  connection: local
+  hosts: desktop
+  #connection: local
   become: true
   tasks:
    - name: Ping my hosts
@@ -11,3 +11,26 @@
      ansible.builtin.debug:
        msg: Hello world
 
+   - name: install packages
+     package:
+       name:
+         - htop
+         #- tmux
+         #- vim-nox
+
+   - name: uninstall packages
+     package:
+       name:
+         #- htop
+         - tmux
+         - vim-nox
+       state: absent
+
+   - name: Install tools
+     apt:
+        pkg:
+          - software-properties-common
+          - apt-transport-https
+          - wget
+        state: latest
+        update_cache: true
