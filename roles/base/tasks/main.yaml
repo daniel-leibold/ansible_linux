@@ -1,0 +1,54 @@
+# code: language=ansible
+---
+- name: Install multi python packages with version specifiers
+  ansible.builtin.pip:
+    name:
+      - ansible-lint
+    # set to absent since on python3.8 some issues occured.
+    # WARNING: ansible-lint is no longer tested under Python 3.8 and will
+    # soon require 3.9. Do not report bugs for this version.
+    state: absent    # present, absent, latest, forcereinstall
+- name: Install pip tools (pre-commit, etc)
+  ansible.builtin.pip:
+    name:
+      - pre-commit
+      - psutil
+    executable: pip3
+- name: Ping my hosts
+  ansible.builtin.ping:
+- name: Print message
+  ansible.builtin.debug:
+    msg: Hello world
+- name: install packages
+  package:
+    name:
+      - htop
+      # - tmux
+      # - vim-nox
+- name: uninstall packages
+  package:
+    name:
+      # - htop
+      - tmux
+      - vim-nox
+    state: absent
+- name: Install tools
+  apt:
+    pkg:
+      - software-properties-common
+      - apt-transport-https
+      - wget
+    state: latest
+    update_cache: true
+- name: copy wallpaper file
+  copy:
+    src: files/wallpaper.png
+    dest: /usr/share/backgrounds/wallpaper.png
+    owner: root
+    group: root
+- name: set wallpaper
+  become_user: daniel
+  community.general.dconf:
+    # trunk-ignore(yamllint/quoted-strings)
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/wallpaper.png'"
