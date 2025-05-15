@@ -1,0 +1,11 @@
+# code: language=ansible
+---
+# kind for local kubernetes scenarios
+# from galaxy ansible-galaxy role info xanmanning.kind
+# see it on github https://github.com/PyratLabs/ansible-role-kind
+- name: xanmanning.kind
+
+# VS Code 
+# https://galaxy.ansible.com/ui/standalone/roles/ecgalaxy/vscode/documentation/
+- name: ecgalaxy.vscode
+

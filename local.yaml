@@ -1,6 +1,7 @@
+# code: language=ansible
 ---
 - name: My first play
-  hosts: desktop
+  hosts: workstation
   #connection: local
   become: true
   tasks:

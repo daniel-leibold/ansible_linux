@@ -1,0 +1,14 @@
+# code: language=ansible
+---
+- hosts: workstation
+  vars:
+    vscode_extensions:
+      - ms-azuretools.vscode-docker
+      - ms-python.python
+      - ms-vscode.powershell
+      - ms-vscode.azurecli
+      - redhat.ansible
+      - trunk.io # for linting
+  roles:
+    - ecgalaxy.vscode
+    
