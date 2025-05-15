@@ -14,6 +14,11 @@
         # soon require 3.9. Do not report bugs for this version.
         state: absent    # present, absent, latest, forcereinstall
 
+    - name: Install pre-commit
+      ansible.builtin.pip:
+        name:
+          - pre-commit
+
     - name: Ping my hosts
       ansible.builtin.ping:
 
@@ -44,3 +49,9 @@
           - wget
         state: latest
         update_cache: true
+
+- name: Install VSCode
+  ansible.builtin.import_playbook: vscode.yaml
+
+- name: Install Kind (k8s)
+  ansible.builtin.import_playbook: kind.yaml
