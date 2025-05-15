@@ -8,7 +8,6 @@
       - ms-vscode.powershell
       - ms-vscode.azurecli
       - redhat.ansible
-      - trunk.io # for linting
+      - trunk.io    # for linting
   roles:
     - ecgalaxy.vscode
-    

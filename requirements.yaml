@@ -5,7 +5,6 @@
 # see it on github https://github.com/PyratLabs/ansible-role-kind
 - name: xanmanning.kind
 
-# VS Code 
+# VS Code
 # https://galaxy.ansible.com/ui/standalone/roles/ecgalaxy/vscode/documentation/
 - name: ecgalaxy.vscode
-

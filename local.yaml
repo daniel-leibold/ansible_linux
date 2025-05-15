@@ -1,34 +1,43 @@
 # code: language=ansible
 ---
-- name: My first play
+- name: Basic install tasks
   hosts: workstation
-  #connection: local
+  # connection: local
   become: true
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
+    - name: Install multi python packages with version specifiers
+      ansible.builtin.pip:
+        name:
+          - ansible-lint
+        # set to absent since on python3.8 some issues occured.
+        # WARNING: ansible-lint is no longer tested under Python 3.8 and will
+        # soon require 3.9. Do not report bugs for this version.
+        state: absent    # present, absent, latest, forcereinstall
 
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Hello world
+    - name: Ping my hosts
+      ansible.builtin.ping:
 
-   - name: install packages
-     package:
-       name:
-         - htop
-         #- tmux
-         #- vim-nox
+    - name: Print message
+      ansible.builtin.debug:
+        msg: Hello world
 
-   - name: uninstall packages
-     package:
-       name:
-         #- htop
-         - tmux
-         - vim-nox
-       state: absent
+    - name: install packages
+      package:
+        name:
+          - htop
+          # - tmux
+          # - vim-nox
 
-   - name: Install tools
-     apt:
+    - name: uninstall packages
+      package:
+        name:
+          # - htop
+          - tmux
+          - vim-nox
+        state: absent
+
+    - name: Install tools
+      apt:
         pkg:
           - software-properties-common
           - apt-transport-https
