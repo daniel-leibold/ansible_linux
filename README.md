@@ -4,9 +4,10 @@ Ansible Linux Playground
 
 This should be a playground for ansible. Ideally it should help to setup and streamline my local ubuntu setup in a quick and easy way.
 
-Guides to follow:
+Guides to follow and inspired by:
 
 - <https://docs.ansible.com/ansible/latest/installation_guide/index.html>
+- <https://github.com/LearnLinuxTV/ansible_course/tree/main>
 
 ## Getting started
 
