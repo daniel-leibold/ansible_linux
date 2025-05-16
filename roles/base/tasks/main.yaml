@@ -42,8 +42,8 @@
     update_cache: true
 - name: copy wallpaper file
   copy:
-    src: files/wallpaper.png
-    dest: /usr/share/backgrounds/wallpaper.png
+    src: files/wallpaper.jpg
+    dest: /usr/share/backgrounds/wallpaper.jpg
     owner: root
     group: root
 - name: set wallpaper
@@ -51,4 +51,4 @@
   community.general.dconf:
     # trunk-ignore(yamllint/quoted-strings)
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///usr/share/backgrounds/wallpaper.png'"
+    value: "'file:///usr/share/backgrounds/wallpaper.jpg'"
