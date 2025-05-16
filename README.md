@@ -15,8 +15,8 @@ If you have followed the installation guide and setup ansible correctly you shou
 
 ```bash
 # via ansible-playbook
-ansible-playbook --connection=local local.yaml
-ansible-playbook -i inventory.yaml --connection=local local.yaml --ask-become-pass
+ansible-playbook --connection=local site.yaml
+ansible-playbook -i inventory.yaml --connection=local site.yaml --ask-become-pass
 # with ansible
 ansible workstation -m ping -i inventory.yaml --connection=local
 ```
