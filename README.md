@@ -27,6 +27,8 @@ You might find same usefull playbook in the galaxy. (see <https://docs.ansible.c
 To install it run following first:
 
 ```bash
+# search for roles
+ansible-galaxy role search kind
 # for a single role
 ansible-galaxy role install xanmanning.kind
 # or via requirements file
